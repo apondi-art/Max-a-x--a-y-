@@ -3,16 +3,22 @@ package main
 import "fmt"
 
 func main() {
-	a1 := []string{"hoqq", "bbllkw", "oox", "ejjuyyy", "plmiis", "xxxzgpsssa", "xxwwkktt", "znnnnfqknaz", "qqquuhii", "dvvvwz"}
-	a2 := []string{"cccooommaaqqoxii", "gggqaffhhh", "tttoowwwmmww"}
+	a1 := []string{"ejjjjmmtthh", "zxxuueeg", "aanlljrrrxx", "dqqqaaabbb", "oocccffuucccjjjkkkjyyyeehh"}
+	a2 := []string{"bbbaaayddqbbrrrv"}
 	fmt.Println(MxDifLg(a1, a2))
 
 }
 
 func MxDifLg(a1 []string, a2 []string) (result int) {
-	for _, y := range a2 {
-		for _, x := range a1 {
-			n := len(y) - len(x)
+	if len(a1) == 0 || len(a2) == 0 {
+		return -1
+	}
+	for _, x := range a1 {
+		for _, y := range a2 {
+			n := len(x) - len(y)
+			if n < 0 {
+				n *= -1
+			}
 			if n > result {
 				result = n
 			}
